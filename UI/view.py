@@ -1,7 +1,7 @@
 import flet as ft
 
 
-class View(ft.UserControl):
+class View():
     def __init__(self, page: ft.Page):
         super().__init__()
         # page stuff
@@ -34,9 +34,9 @@ class View(ft.UserControl):
         self._page.controls.append(row1)
 
         #ROW2
-        self._ddAlbum = ft.Dropdown(label="Album", on_change=self._controller.getSelectedAlbum)
+        self._ddAlbum = ft.Dropdown(label="Album")
         self._btnAnalisiComp = ft.ElevatedButton(text = "Analisi Componente.",
-                                                 on_click=self._controller.handleAnalisiComp)
+                                                 on_click=self._controller.handleAnalisiComp, disabled=True)
 
         row2 = ft.Row([
             ft.Container(self._ddAlbum, width=300),
